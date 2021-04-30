@@ -38,7 +38,7 @@ jobs:
           git add .
           git commit -m "update built files after user commit"
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: hzz07/hzz07.github.io@master
         with:
           github_token: ${{ secrets.ACCESS }}
 
