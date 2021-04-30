@@ -43,5 +43,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS }}
           REPOSITORY_NAME: hzz07/hzz07.github.io
           BRANCH: master
+          FOLDER: .
 
 
