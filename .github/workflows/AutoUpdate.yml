@@ -24,13 +24,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 2.7
-      - name: run Python
-        run: |
-          python3 generate.py
       - name: Build
         run: |
           git config --global core.quotepath false
+          git ls-files | while read file; do touch -d $(git log -1 --format="@%ct" "$file") "$file"; done
           npm install
+          python3 generate.py
           npm run build
       - name: Commit files
         run: |
